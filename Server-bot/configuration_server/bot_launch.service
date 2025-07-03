@@ -1,0 +1,15 @@
+[Unit]
+Description=Script de démarage auto du bot tablette
+After=network-online.target
+Wants=network-online.target
+
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /home/lepoulet/Bots/Bot_tablet/main.py
+Restart=on-failure
+User=lepoulet
+WorkingDirectory=/home/lepoulet/Bots/
+
+[Install]
+WantedBy=multi-user.target
